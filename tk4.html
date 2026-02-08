@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài tập TK4 - Tab View</title>
+
+  <!-- CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    .tab-buttons {
+      margin-bottom: 15px;
+    }
+
+    .tab-buttons button {
+      padding: 10px 16px;
+      margin-right: 5px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .tab-buttons button:hover {
+      background-color: #0056b3;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Bài tập TK4: Tạo Tab View</h2>
+
+  <!-- Nút Tab -->
+  <div class="tab-buttons">
+    <button onclick="openTab('tab1')">Tab 1</button>
+    <button onclick="openTab('tab2')">Tab 2</button>
+    <button onclick="openTab('tab3')">Tab 3</button>
+  </div>
+
+  <!-- Nội dung Tab -->
+  <div id="tab1" class="tab-content">
+    <h3>Nội dung Tab 1</h3>
+    <p>Đây là nội dung của tab thứ nhất.</p>
+  </div>
+
+  <div id="tab2" class="tab-content">
+    <h3>Nội dung Tab 2</h3>
+    <p>Đây là nội dung của tab thứ hai.</p>
+  </div>
+
+  <div id="tab3" class="tab-content">
+    <h3>Nội dung Tab 3</h3>
+    <p>Đây là nội dung của tab thứ ba.</p>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function openTab(tabName) {
+      document.querySelectorAll(".tab-content")
+        .forEach(c => c.style.display = "none");
+
+      document.getElementById(tabName).style.display = "block";
+    }
+
+    // Mở tab 1 mặc định
+    openTab('tab1');
+  </script>
+
+</body>
+</html>

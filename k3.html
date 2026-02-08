@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài tập K3 - Kiểm tra mật khẩu</title>
+
+  <!-- CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 6px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #error-msg {
+      color: red;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Bài tập K3: Kiểm tra mật khẩu khớp</h2>
+
+  <form id="reg-form">
+    <label>Mật khẩu</label>
+    <input type="password" id="pass1" required>
+
+    <label>Nhập lại mật khẩu</label>
+    <input type="password" id="pass2" required>
+
+    <button type="submit">Đăng ký</button>
+
+    <div id="error-msg"></div>
+  </form>
+
+  <!-- JavaScript -->
+  <script>
+    document.getElementById("reg-form").addEventListener("submit", function(e) {
+      const p1 = document.getElementById("pass1").value;
+      const p2 = document.getElementById("pass2").value;
+
+      if (p1 !== p2) {
+        e.preventDefault();
+        document.getElementById("error-msg").textContent = "Mật khẩu không khớp!";
+      } else {
+        document.getElementById("error-msg").textContent = "";
+        alert("Đăng ký thành công!");
+      }
+    });
+  </script>
+
+</body>
+</html>

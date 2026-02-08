@@ -1,0 +1,27 @@
+body {
+  font-family: Arial;
+  padding: 20px;
+}
+
+nav a {
+  margin-right: 15px;
+}
+
+.avatar {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.carousel {
+  width: 300px;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: 0.5s;
+}
+
+.slide {
+  width: 300px;
+}

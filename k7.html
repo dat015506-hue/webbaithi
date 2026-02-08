@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài tập K7 - Parallax Scrolling</title>
+
+  <!-- CSS -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Khối parallax */
+    .parallax-container {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #parallax-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      background-image: url("https://picsum.photos/1200/800");
+      background-size: cover;
+      background-position: center;
+      will-change: transform;
+    }
+
+    .parallax-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-align: center;
+      padding-top: 40vh;
+      font-size: 32px;
+      font-weight: bold;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+
+    /* Nội dung bên dưới để tạo scroll */
+    .content {
+      padding: 50px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Parallax section -->
+  <div class="parallax-container">
+    <div id="parallax-bg"></div>
+    <div class="parallax-content">
+      Hiệu ứng Parallax Scrolling
+    </div>
+  </div>
+
+  <!-- Nội dung cuộn -->
+  <div class="content">
+    <h2>Nội dung trang</h2>
+    <p>Cuộn trang để thấy hiệu ứng thị sai.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.</p>
+    <p>In condimentum facilisis porta.</p>
+    <p>Scroll thêm nữa để thấy ảnh nền di chuyển chậm hơn nội dung.</p>
+    <p style="height: 800px;"></p>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    window.addEventListener("scroll", function() {
+      const scrolled = window.scrollY;
+      const parallax = document.getElementById("parallax-bg");
+      // Tốc độ 0.5 lần cuộn
+      parallax.style.transform = "translateY(" + scrolled * 0.5 + "px)";
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài tập TK5 - Accordion</title>
+
+  <!-- CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    .accordion-title {
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .accordion-content {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease;
+      background: #f1f1f1;
+      padding: 0 12px;
+      border-radius: 0 0 5px 5px;
+    }
+
+    .accordion-content p {
+      margin: 12px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Bài tập TK5: Accordion đơn giản</h2>
+
+  <!-- Accordion 1 -->
+  <div class="accordion-title" onclick="toggleAccordion('acc1')">
+    Tiêu đề Accordion 1
+  </div>
+  <div id="acc1" class="accordion-content">
+    <p>Nội dung accordion thứ nhất.</p>
+  </div>
+
+  <!-- Accordion 2 -->
+  <div class="accordion-title" onclick="toggleAccordion('acc2')">
+    Tiêu đề Accordion 2
+  </div>
+  <div id="acc2" class="accordion-content">
+    <p>Nội dung accordion thứ hai.</p>
+  </div>
+
+  <!-- Accordion 3 -->
+  <div class="accordion-title" onclick="toggleAccordion('acc3')">
+    Tiêu đề Accordion 3
+  </div>
+  <div id="acc3" class="accordion-content">
+    <p>Nội dung accordion thứ ba.</p>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleAccordion(id) {
+      const content = document.getElementById(id);
+      content.classList.toggle("active");
+      content.style.maxHeight = content.classList.contains("active")
+        ? content.scrollHeight + "px"
+        : "0";
+    }
+  </script>
+
+</body>
+</html>
